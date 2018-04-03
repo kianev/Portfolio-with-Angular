@@ -1,0 +1,20 @@
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+  height: 100%;
+}
+
+mat-sidenav {
+  padding:  20px 20px 20px 5px;
+}
+
+.logo {
+  padding-right: 10px;
+}
+
+li a, div a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: lavender;
+}

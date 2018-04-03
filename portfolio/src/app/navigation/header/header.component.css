@@ -1,0 +1,19 @@
+
+.navigation-routes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.logo {
+  padding-right: 10px;
+}
+
+li a, div a {
+  text-decoration: none;
+  color: white;
+}
+
+li a:hover, div a:hover  {
+  color: lavender;
+}
