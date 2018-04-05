@@ -1,0 +1,9 @@
+mat-form-field {
+  width: 300px;
+}
+
+.errorMessage {
+  padding: 0;
+  margin: 0;
+  color: red;
+}

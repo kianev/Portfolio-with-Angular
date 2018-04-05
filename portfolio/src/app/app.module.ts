@@ -16,6 +16,9 @@ import { AppRoutingModule } from "./app-routing.module";
 import { RouterModule } from "@angular/router";
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidebarComponent } from './navigation/sidebar/sidebar.component';
+import {FormsModule} from "@angular/forms";
+import { AuthService } from './auth/auth.service';
+import {AngularFireAuthModule} from "angularfire2/auth";
 
 
 @NgModule({
@@ -31,14 +34,16 @@ import { SidebarComponent } from './navigation/sidebar/sidebar.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
     AppRoutingModule,
     RouterModule,
     AngularFireModule.initializeApp(environment.firebase),
-    FlexLayoutModule
+    FlexLayoutModule,
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

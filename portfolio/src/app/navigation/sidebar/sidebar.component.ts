@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core';
+import {AuthService} from "../../auth/auth.service";
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,15 @@ import {Component, EventEmitter, Output} from '@angular/core';
 })
 export class SidebarComponent {
  @Output() closeSidenav = new EventEmitter<any>();
-  constructor() { }
+
+  constructor(public authService: AuthService) { }
 
   onClose() {
+    this.closeSidenav.emit();
+  }
+
+  onLogout() {
+    this.authService.logout();
     this.closeSidenav.emit();
   }
 }

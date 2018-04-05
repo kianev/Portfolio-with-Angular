@@ -3,7 +3,7 @@
     <button mat-icon-button (click)="onSidenavToggle()"><mat-icon>menu</mat-icon></button>
   </div>
   <div class="logo"><a routerLink="/">JS Projects</a></div>
-  <div fxFlex fxLayout fxLayoutAlign="center center" fxHide.xs>
+  <div fxFlex fxHide.xs>
     <ul fxLayout  fxLayoutGap="20px" class="navigation-routes">
       <li><a routerLink="/skills">Skills</a></li>
       <li><a routerLink="/about">About Me</a></li>
@@ -11,6 +11,7 @@
     </ul>
   </div>
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
-    <a routerLink="/admin-login">Admin Area</a>
+    <a *ngIf="!authService.isAuthenticated()" routerLink="/admin-login">Admin Area</a>
+    <a *ngIf="authService.isAuthenticated()" (click)="onLogout()" routerLink="/">Logout</a>
   </div>
 </mat-toolbar>
