@@ -22,6 +22,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectsService } from './projects/projects.service';
 import {AngularFireStorageModule} from "angularfire2/storage";
 import {AngularFirestore, AngularFirestoreModule} from "angularfire2/firestore";
+import { ProjectCardComponent } from './projects/project-card/project-card.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {AngularFirestore, AngularFirestoreModule} from "angularfire2/firestore";
     ContactComponent,
     HeaderComponent,
     SidebarComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ProjectCardComponent
   ],
   imports: [
     BrowserModule,

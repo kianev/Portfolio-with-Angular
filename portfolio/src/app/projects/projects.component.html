@@ -1,7 +1,17 @@
-<p>
- projects works
-</p>
+<div class="container">
+  <h3>Take a look at my projects</h3>
+  <!--<ul *ngFor="let project of projects">
+    <li>{{ project.title }}</li>
+  </ul>-->
 
-<ul *ngFor="let project of projects">
-  <li>{{ project.title }}</li>
-</ul>
+  <div flex fxLayout="row" fxLayout.lt-sm="column" class="flexBox">
+   <!-- <div fxFlex class="test"></div>-->
+    <app-project-card></app-project-card>
+    <app-project-card></app-project-card>
+    <app-project-card></app-project-card>
+    <app-project-card></app-project-card>
+    <app-project-card></app-project-card>
+  </div>
+
+
+</div>

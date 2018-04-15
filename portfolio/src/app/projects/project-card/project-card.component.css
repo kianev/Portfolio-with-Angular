@@ -1,0 +1,11 @@
+.project-card {
+  height: 500px;
+  max-width: 400px;
+  margin: 20px;
+}
+
+@media (max-width: 599px) {
+  .project-card {
+    height: auto;
+  }
+}

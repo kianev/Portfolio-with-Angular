@@ -1,0 +1,13 @@
+.flexBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media (max-width: 599px) {
+  .flexBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
