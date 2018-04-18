@@ -26,6 +26,7 @@ import { AdminProjectsComponent } from './admin/admin-projects/admin-projects.co
 import { AdminProjectFormComponent } from './admin/admin-projects/admin-project-form/admin-project-form.component';
 import { UploadService } from './services/upload.service';
 import { DataService } from './services/data.service';
+import { AdminProjectEditFormComponent } from './admin/admin-projects/admin-project-edit-form/admin-project-edit-form.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { DataService } from './services/data.service';
     ProjectsComponent,
     ProjectCardComponent,
     AdminProjectsComponent,
-    AdminProjectFormComponent
+    AdminProjectFormComponent,
+    AdminProjectEditFormComponent
   ],
   imports: [
     BrowserModule,

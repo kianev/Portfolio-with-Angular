@@ -12,7 +12,8 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   projects;
   projectsSubscription: Subscription;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {
+  }
 
   ngOnInit() {
    this.projectsSubscription = this.dataService.fetchProjects().map(actions => {

@@ -25,7 +25,6 @@ export class AdminProjectsComponent implements OnInit, OnDestroy {
     })
       .subscribe(projects => {
         this.dataSource = new MatTableDataSource(projects);
-        console.log(this.dataSource.data);
       });
   }
 

@@ -21,7 +21,7 @@
       <!-- Weight Column -->
       <ng-container matColumnDef="edit">
         <mat-header-cell *matHeaderCellDef> </mat-header-cell>
-        <mat-cell *matCellDef="let element">  <button mat-raised-button color="primary">Edit</button> </mat-cell>
+        <mat-cell *matCellDef="let element">  <a mat-raised-button color="primary" [routerLink]="['/admin-projects/' + element.id]">Edit</a> </mat-cell>
       </ng-container>
 
       <!-- Symbol Column -->

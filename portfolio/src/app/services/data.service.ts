@@ -6,11 +6,15 @@ export class DataService {
 
   constructor(private db: AngularFirestore) { }
 
+  getProject(id: string) {
+    return this.db.collection('projects').doc(id).ref;
+  }
+
   fetchProjects() {
     return this.db.collection('projects').snapshotChanges();
   }
 
-  deleteProjectFromDB(id) {
+  deleteProjectFromDB(id: string) {
      this.db.collection('projects').doc(id).delete()
        .then(result => {
          console.log(result, 'Project deleted')
