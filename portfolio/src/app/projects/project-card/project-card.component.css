@@ -4,6 +4,13 @@
   margin: 20px;
 }
 
+.project-card:hover {
+}
+
+.button {
+  margin: 10px !important;
+}
+
 @media (max-width: 599px) {
   .project-card {
     height: auto;

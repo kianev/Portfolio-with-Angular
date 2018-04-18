@@ -5,12 +5,8 @@
   </ul>-->
 
   <div flex fxLayout="row" fxLayout.lt-sm="column" class="flexBox">
-   <!-- <div fxFlex class="test"></div>-->
-    <app-project-card></app-project-card>
-    <app-project-card></app-project-card>
-    <app-project-card></app-project-card>
-    <app-project-card></app-project-card>
-    <app-project-card></app-project-card>
+    <app-project-card *ngFor="let project of projects" [project]="project">
+    </app-project-card>
   </div>
 
 

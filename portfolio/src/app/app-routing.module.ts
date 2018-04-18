@@ -5,6 +5,8 @@ import { SkillsComponent } from "./skills/skills.component";
 import { ContactComponent } from "./contact/contact.component";
 import { AboutComponent } from "./about/about.component";
 import {ProjectsComponent} from "./projects/projects.component";
+import {AdminProjectsComponent} from "./admin/admin-projects/admin-projects.component";
+import {AdminProjectFormComponent} from "./admin/admin-projects/admin-project-form/admin-project-form.component";
 
 const routes: Routes = [
   {path: '', component: ProjectsComponent},
@@ -13,6 +15,8 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'admin-login', component: LoginComponent},
+  {path: 'admin-projects', component: AdminProjectsComponent},
+  {path: 'admin-project-form', component: AdminProjectFormComponent},
 ];
 
 @NgModule({

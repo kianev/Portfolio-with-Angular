@@ -14,7 +14,7 @@ export class AuthService {
     this.afAuth.auth.signInWithEmailAndPassword(authData.email, authData.password)
       .then(result => {
         this.isAuth = true;
-        this.router.navigate(['/projects']);
+        this.router.navigate(['/admin-projects']);
       })
       .catch(error => {
         this.errorMessage = error.message;

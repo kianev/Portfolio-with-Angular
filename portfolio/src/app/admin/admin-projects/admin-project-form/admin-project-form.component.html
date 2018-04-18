@@ -1,0 +1,18 @@
+<div class="container" fxFlex fxLayoutAlign="center center">
+  <form class="inputForm" fxFlex fxLayout="column" (ngSubmit)="onProjectUpload(f)" #f="ngForm">
+    <mat-form-field>
+      <input matInput placeholder="Title" name="title" ngModel>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Live Link" name="liveLink" ngModel>
+    </mat-form-field>
+    <mat-form-field>
+    <input matInput placeholder="Github Link" name="githubLink" ngModel>
+    </mat-form-field>
+    <br>
+    <button type="button" mat-raised-button (click)="imgFileInput.click()">Upload Screenshot</button>
+    <input hidden type="file" #imgFileInput (change)="uploadImage($event)"/>
+    <br>
+    <button mat-raised-button color="primary" type="submit" [disabled]="uploadService.uploadDone()">Submit</button>
+  </form>
+</div>

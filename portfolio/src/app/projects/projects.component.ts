@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import { ProjectsService } from "./projects.service";
 import 'rxjs/add/operator/switchMap';
 import { Subscription } from "rxjs/Subscription";
+import { DataService } from "../services/data.service";
 
 @Component({
   selector: 'app-projects',
@@ -12,10 +12,10 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   projects;
   projectsSubscription: Subscription;
 
-  constructor(private projectsService: ProjectsService) { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
-   this.projectsSubscription = this.projectsService.fetchProjects().map(actions => {
+   this.projectsSubscription = this.dataService.fetchProjects().map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data();
         const id = a.payload.doc.id;
@@ -24,7 +24,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     })
      .subscribe(projects => {
        this.projects = projects;
-       console.log(this.projects);
      });
   }
 
