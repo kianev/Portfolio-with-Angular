@@ -3,36 +3,47 @@
   <br>
   <br>
 
-  <div class="example-container mat-elevation-z8">
+  <div class="example-container mat-elevation-z8" *ngIf="!isLoading">
     <div class="example-header">
       <mat-form-field>
         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
       </mat-form-field>
     </div>
 
-    <mat-table #table [dataSource]="dataSource">
+    <mat-table #table [dataSource]="dataSource" matSort>
 
-      <!-- Name Column -->
+      <!-- Project Column -->
       <ng-container matColumnDef="project">
-        <mat-header-cell *matHeaderCellDef> Project </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Project </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
       </ng-container>
 
-      <!-- Weight Column -->
+      <!-- Edit Column -->
       <ng-container matColumnDef="edit">
-        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
-        <mat-cell *matCellDef="let element">  <a mat-raised-button color="primary" [routerLink]="['/admin-projects/' + element.id]">Edit</a> </mat-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <a class="btn" mat-raised-button color="primary" [routerLink]="['/admin-projects/' + element.id]">Edit</a>
+        </mat-cell>
       </ng-container>
 
-      <!-- Symbol Column -->
+      <!-- Delete Column -->
       <ng-container matColumnDef="delete">
-        <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
-        <mat-cell *matCellDef="let element"> <button mat-raised-button color="accent" (click)="deleteProject(element.id)">Delete</button> </mat-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>  </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button class="btn" mat-raised-button color="warn" (click)="deleteProject(element.id)">Delete</button>
+        </mat-cell>
       </ng-container>
 
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
+
+    <mat-paginator #paginator
+                   [pageSize]="5"
+                   [pageSizeOptions]="[5, 10, 20]"
+                   [showFirstLastButtons]="true">
+    </mat-paginator>
   </div>
 
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
 </div>

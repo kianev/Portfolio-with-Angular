@@ -17,8 +17,8 @@ export class UploadService {
     const fileName = image.name;
     const task = this.storage.upload(fileName, image);
 
+    this.uploadPercent = task.percentageChanges();
     task.downloadURL().subscribe(downloadURL => {
-      console.log(downloadURL);
       this.downloadURL = downloadURL;
       this.uploaded = false;
     });
@@ -31,7 +31,6 @@ export class UploadService {
   uploadProjects(project: Project) {
    if(this.downloadURL) {
      project.imageUrl = this.downloadURL;
-     console.log(project);
      this.db.collection('projects').add(project);
    }
   }
@@ -39,7 +38,6 @@ export class UploadService {
   updateProject(project: Project, id: string){
     if(this.downloadURL) {
       project.imageUrl = this.downloadURL;
-      console.log(project);
       this.db.collection('projects').doc(id).update(project);
     }
   }

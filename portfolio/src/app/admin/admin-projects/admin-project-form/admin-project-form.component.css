@@ -1,4 +1,7 @@
-
 .inputForm {
   max-width: 600px;
+}
+
+mat-progress-bar {
+  margin-top: 10px;
 }

@@ -1,8 +1,9 @@
 import { NgModule } from "@angular/core";
 import {
   MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule, MatSidenavModule,
-  MatToolbarModule, MatTableModule
+  MatToolbarModule, MatTableModule, MatSortModule, MatPaginatorModule, MatProgressSpinnerModule
 } from "@angular/material";
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 const MAT_MODULES = [
   MatButtonModule,
@@ -13,7 +14,11 @@ const MAT_MODULES = [
   MatFormFieldModule,
   MatInputModule,
   MatCardModule,
-  MatTableModule
+  MatTableModule,
+  MatSortModule,
+  MatPaginatorModule,
+  MatProgressSpinnerModule,
+  MatProgressBarModule
 ];
 
 @NgModule({

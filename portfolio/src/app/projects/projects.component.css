@@ -4,6 +4,10 @@
   justify-content: space-around;
 }
 
+mat-spinner {
+  margin: 100px auto;
+}
+
 @media (max-width: 599px) {
   .flexBox {
     display: flex;

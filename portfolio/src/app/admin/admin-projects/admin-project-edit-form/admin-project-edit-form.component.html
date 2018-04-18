@@ -15,10 +15,12 @@
     <br>
     <button type="button" mat-raised-button (click)="imgFileInput.click()">Change Screenshot</button>
     <input hidden type="file" #imgFileInput (change)="uploadImage($event)"/>
+    <mat-progress-bar mode="indeterminate" *ngIf="uploadService.uploadDone()"></mat-progress-bar>
     <br>
     <button mat-raised-button color="primary" type="submit" [disabled]="uploadService.uploadDone()">Save</button>
   </form>
 </div>
+<mat-spinner *ngIf="!projectFetched"></mat-spinner>
 
 
 

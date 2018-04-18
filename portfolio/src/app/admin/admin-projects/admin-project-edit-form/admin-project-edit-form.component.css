@@ -1,3 +1,11 @@
 .inputForm {
   max-width: 600px;
 }
+
+mat-spinner {
+  margin: 100px auto;
+}
+
+mat-progress-bar {
+  margin-top: 10px;
+}

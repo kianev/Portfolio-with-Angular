@@ -10,6 +10,7 @@ import { DataService } from "../services/data.service";
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
   projects;
+  isLoading = true;
   projectsSubscription: Subscription;
 
   constructor(private dataService: DataService) {
@@ -25,6 +26,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     })
      .subscribe(projects => {
        this.projects = projects;
+       this.isLoading = false;
      });
   }
 
