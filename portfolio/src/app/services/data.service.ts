@@ -17,7 +17,7 @@ export class DataService {
   deleteProjectFromDB(id: string) {
      this.db.collection('projects').doc(id).delete()
        .then(result => {
-         console.log(result, 'Project deleted')
+         console.log('Project deleted')
        })
        .catch(error => {
          console.log(error);

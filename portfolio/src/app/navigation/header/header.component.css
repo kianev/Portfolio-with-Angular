@@ -18,6 +18,16 @@ li a, div a {
   color: white;
 }
 
+div a {
+  margin-right: 10px;
+}
+
 li a:hover, div a:hover  {
   color: lightskyblue;
+}
+
+@media (max-width: 750px) {
+  mat-toolbar {
+    font-size: 16px;
+  }
 }

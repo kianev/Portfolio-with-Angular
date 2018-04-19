@@ -1,3 +1,28 @@
-<p>
-  skills works!
-</p>
+<div class="container">
+  <h1 fxFlex fxLayoutAlign="center center">My Skills</h1>
+  <mat-tab-group>
+
+    <mat-tab label="Frameworks">
+      <div flex fxLayout="row" fxLayout.lt-sm="column" class="flexBox">
+        <app-skills-card fxLayoutAlign="center">
+        </app-skills-card>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Frontend">
+      <div flex fxLayout="row" fxLayout.lt-sm="column" class="flexBox">
+        <app-skills-card fxLayoutAlign="center">
+        </app-skills-card>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Backend">
+      <div flex fxLayout="row" fxLayout.lt-sm="column" class="flexBox">
+        <app-skills-card fxLayoutAlign="center">
+        </app-skills-card>
+      </div>
+    </mat-tab>
+
+  </mat-tab-group>
+
+</div>

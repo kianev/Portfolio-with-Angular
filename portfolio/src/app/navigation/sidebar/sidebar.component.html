@@ -4,5 +4,6 @@
   <a mat-list-item routerLink="/about" (click)="onClose()">About Me</a>
   <a mat-list-item routerLink="/contact" (click)="onClose()">Contact</a>
   <a *ngIf="!authService.isAuthenticated()" mat-list-item routerLink="/admin-login" (click)="onClose()">Admin Area</a>
+  <a *ngIf="authService.isAuthenticated()" mat-list-item routerLink="/admin-projects" (click)="onClose()">Manage Projects</a>
   <a *ngIf="authService.isAuthenticated()" mat-list-item routerLink="/" (click)="onLogout()">Logout</a>
 </mat-nav-list>

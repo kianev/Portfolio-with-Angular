@@ -12,6 +12,7 @@
   </div>
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <a *ngIf="!authService.isAuthenticated()" routerLink="/admin-login">Admin Area</a>
+    <a *ngIf="authService.isAuthenticated()" routerLink="/admin-projects">Manage Projects</a>
     <a *ngIf="authService.isAuthenticated()" (click)="onLogout()" routerLink="/">Logout</a>
   </div>
 </mat-toolbar>
