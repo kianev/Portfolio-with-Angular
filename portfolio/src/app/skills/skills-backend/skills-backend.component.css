@@ -1,0 +1,14 @@
+.skills {
+  width: 50%;
+  margin: 10px;
+}
+
+mat-progress-bar {
+  margin-top: 5px;
+}
+
+@media (max-width: 599px) {
+  .skills {
+    width: 100%;
+  }
+}
