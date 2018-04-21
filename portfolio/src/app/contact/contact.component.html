@@ -1,3 +1,19 @@
-<p>
-  contact works!
-</p>
+<div class="container" fxFlex fxLayoutAlign="center center">
+  <form class="contactForm" fxFlex fxLayout="column" (ngSubmit)="onSubmitForm(f)" #f="ngForm">
+    <mat-form-field>
+      <h3>Contact me if you are interested</h3>
+      <label for="name">Your Name</label>
+      <input matInput id="name" name="name" ngModel required>
+    </mat-form-field>
+    <mat-form-field>
+      <label for="email">Your Email</label>
+      <input matInput id="email" name="email" ngModel required>
+    </mat-form-field>
+    <mat-form-field>
+      <label for="message">Your Message</label>
+      <textarea matInput id="message" matTextareaAutosize  matAutosizeMinRows="3" name="message" ngModel required></textarea>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" type="submit" [disabled]="f.invalid">Send</button>
+  </form>
+</div>
