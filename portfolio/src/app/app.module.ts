@@ -30,6 +30,8 @@ import { AdminProjectEditFormComponent } from './admin/admin-projects/admin-proj
 import { SkillsFrontendComponent } from './skills/skills-frontend/skills-frontend.component';
 import { SkillsBackendComponent } from './skills/skills-backend/skills-backend.component';
 import { EmailService } from './services/email.service';
+import { UiService } from "./services/ui.service";
+import { FooterComponent } from './footer/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { EmailService } from './services/email.service';
     AdminProjectFormComponent,
     AdminProjectEditFormComponent,
     SkillsFrontendComponent,
-    SkillsBackendComponent
+    SkillsBackendComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,7 @@ import { EmailService } from './services/email.service';
     AngularFirestoreModule,
     AngularFireStorageModule
   ],
-  providers: [AuthService, UploadService, DataService, EmailService],
+  providers: [AuthService, UploadService, DataService, EmailService, UiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
