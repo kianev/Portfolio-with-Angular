@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from "@angular/forms";
+import {EmailService} from "../services/email.service";
 
 @Component({
   selector: 'app-contact',
@@ -8,13 +9,13 @@ import {NgForm} from "@angular/forms";
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private emailService: EmailService) { }
 
   ngOnInit() {
   }
 
   onSubmitForm(form: NgForm) {
-    console.log(form.value);
+    this.emailService.sendEmail(form.value);
     form.resetForm();
   }
 }

@@ -29,6 +29,7 @@ import { DataService } from './services/data.service';
 import { AdminProjectEditFormComponent } from './admin/admin-projects/admin-project-edit-form/admin-project-edit-form.component';
 import { SkillsFrontendComponent } from './skills/skills-frontend/skills-frontend.component';
 import { SkillsBackendComponent } from './skills/skills-backend/skills-backend.component';
+import { EmailService } from './services/email.service';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,7 @@ import { SkillsBackendComponent } from './skills/skills-backend/skills-backend.c
     AngularFirestoreModule,
     AngularFireStorageModule
   ],
-  providers: [AuthService, UploadService, DataService],
+  providers: [AuthService, UploadService, DataService, EmailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
