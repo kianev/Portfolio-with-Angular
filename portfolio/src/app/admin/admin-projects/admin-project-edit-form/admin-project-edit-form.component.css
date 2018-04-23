@@ -1,5 +1,6 @@
 .inputForm {
   max-width: 600px;
+  margin-bottom: 40px;
 }
 
 mat-spinner {

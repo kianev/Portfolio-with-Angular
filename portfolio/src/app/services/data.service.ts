@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from "angularfire2/firestore";
+import { UiService } from "./ui.service";
 
 @Injectable()
 export class DataService {
 
-  constructor(private db: AngularFirestore) { }
+  constructor(private db: AngularFirestore, private uiService: UiService) { }
 
   getProject(id: string) {
     return this.db.collection('projects').doc(id).ref;
@@ -17,10 +18,10 @@ export class DataService {
   deleteProjectFromDB(id: string) {
      this.db.collection('projects').doc(id).delete()
        .then(result => {
-         console.log('Project deleted')
+         this.uiService.showSnackbar('Project deleted!', '', 3000);
        })
        .catch(error => {
-         console.log(error);
+         this.uiService.showSnackbar('Project could not be deleted!', '', 3000);
        });
   }
 }

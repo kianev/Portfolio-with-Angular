@@ -3,8 +3,8 @@
   <br>
   <br>
 
-  <div class="example-container mat-elevation-z8" *ngIf="!isLoading">
-    <div class="example-header">
+  <div class="form-container mat-elevation-z8">
+    <div class="header">
       <mat-form-field>
         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
       </mat-form-field>
@@ -45,5 +45,5 @@
     </mat-paginator>
   </div>
 
-  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <!--<mat-spinner *ngIf="isLoading"></mat-spinner>-->
 </div>

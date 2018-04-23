@@ -32,6 +32,7 @@ import { SkillsBackendComponent } from './skills/skills-backend/skills-backend.c
 import { EmailService } from './services/email.service';
 import { UiService } from "./services/ui.service";
 import { FooterComponent } from './footer/footer/footer.component';
+import {AuthGuard} from "./auth/auth.guard";
 
 @NgModule({
   declarations: [
@@ -64,7 +65,7 @@ import { FooterComponent } from './footer/footer/footer.component';
     AngularFirestoreModule,
     AngularFireStorageModule
   ],
-  providers: [AuthService, UploadService, DataService, EmailService, UiService],
+  providers: [AuthService, UploadService, DataService, EmailService, UiService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

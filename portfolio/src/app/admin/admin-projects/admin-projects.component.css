@@ -2,8 +2,12 @@ mat-spinner {
   margin: 50px auto;
 }
 
-.example-header {
+.header {
   margin-left: 20px;
+}
+
+.form-container {
+  margin-bottom: 45px;
 }
 
 @media (max-width: 599px) {

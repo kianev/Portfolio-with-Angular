@@ -8,6 +8,7 @@ import {ProjectsComponent} from "./projects/projects.component";
 import {AdminProjectsComponent} from "./admin/admin-projects/admin-projects.component";
 import {AdminProjectFormComponent} from "./admin/admin-projects/admin-project-form/admin-project-form.component";
 import {AdminProjectEditFormComponent} from "./admin/admin-projects/admin-project-edit-form/admin-project-edit-form.component";
+import { AuthGuard } from "./auth/auth.guard";
 
 const routes: Routes = [
   {path: '', component: ProjectsComponent},
@@ -16,9 +17,9 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'admin-login', component: LoginComponent},
-  {path: 'admin-projects', component: AdminProjectsComponent},
-  {path: 'admin-projects/:id', component: AdminProjectEditFormComponent},
-  {path: 'admin-project-form', component: AdminProjectFormComponent},
+  {path: 'admin-projects', component: AdminProjectsComponent, canActivate: [AuthGuard]},
+  {path: 'admin-projects/:id', component: AdminProjectEditFormComponent, canActivate: [AuthGuard]},
+  {path: 'admin-project-form', component: AdminProjectFormComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

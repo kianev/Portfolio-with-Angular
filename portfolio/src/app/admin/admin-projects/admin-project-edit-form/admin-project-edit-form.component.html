@@ -4,6 +4,9 @@
       <input matInput placeholder="Title" name="title" [(ngModel)]="project.title">
     </mat-form-field>
     <mat-form-field>
+      <textarea matInput placeholder="Description" name="description" [(ngModel)]="project.description"></textarea>
+    </mat-form-field>
+    <mat-form-field>
       <input matInput placeholder="Live Link" name="liveLink" [(ngModel)]="project.liveLink">
     </mat-form-field>
     <mat-form-field>
@@ -17,7 +20,7 @@
     <input hidden type="file" #imgFileInput (change)="uploadImage($event)"/>
     <mat-progress-bar mode="indeterminate" *ngIf="uploadService.uploadDone()"></mat-progress-bar>
     <br>
-    <button mat-raised-button color="primary" type="submit" [disabled]="uploadService.uploadDone()">Save</button>
+    <button mat-raised-button color="accent" type="submit" [disabled]="uploadService.uploadDone()">Save</button>
   </form>
 </div>
 <mat-spinner *ngIf="!projectFetched"></mat-spinner>

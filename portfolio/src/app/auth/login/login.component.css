@@ -2,6 +2,10 @@ mat-form-field {
   width: 300px;
 }
 
+.loginForm {
+  margin-bottom: 310px;
+}
+
 .errorMessage {
   padding: 0;
   margin: 0;

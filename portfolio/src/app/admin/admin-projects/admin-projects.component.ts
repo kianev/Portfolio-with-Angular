@@ -13,9 +13,10 @@ export class AdminProjectsComponent implements OnInit, OnDestroy, AfterViewInit 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   displayedColumns = ['project', 'edit', 'delete'];
-  dataSource = new MatTableDataSource();
+  dataSource = new MatTableDataSource<any>();
   projectsSubscription: Subscription;
   isLoading = true;
+
 
   constructor(private dataService: DataService) { }
 
